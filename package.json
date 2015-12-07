@@ -1,0 +1,25 @@
+{
+  "name": "iss-twitter-bot",
+  "version": "1.0.0",
+  "description": "This bot will post greetings to twitter when the ISS passes over a new country.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephenBrownski/ISS-Twitter-Bot.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "api",
+    "iss"
+  ],
+  "author": "Stephen Pankratz-Brown",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephenBrownski/ISS-Twitter-Bot/issues"
+  },
+  "homepage": "https://github.com/StephenBrownski/ISS-Twitter-Bot#readme"
+}
