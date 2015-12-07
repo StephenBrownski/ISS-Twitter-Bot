@@ -28,23 +28,41 @@ function getData(data) {
 
   // Test settings: lat:53.5219142, lon:-113.512807. Central Edmonton
 
-  geocoder.reverse({ lat:lat, lon:lon }, function(err, res) {
+  geocoder.reverse({ lat:53.5219142, lon:-113.512807 }, function(err, res) {
     if (!err) {
       var country = res[0]['country'];
       var countryCode = res[0]['countryCode'];
-
-      console.log('Lat: ' + lat);
-      console.log('Lon: ' + lon);
-      console.log('Country: ' + country + '(' + countryCode + ')');
-      postTweet(country);
     }
+    checkLastCountry(country);
 
   });
 
 }
 
+function checkLastCountry(country) {
+  T.get(
+    'statuses/user_timeline',
+    {
+      user_id: '4488159391',
+      count: 3
+    },
+    function(err, data, response) {
+      data.reverse();
+      var lastTag;
+
+      for (var tweet of data) {
+        lastTag = tweet['entities']['hashtags'][0]['text'];
+      }
+
+      if (country != lastTag) {
+        postTweet(country);
+      }
+    }
+  );
+}
+
 function postTweet(country) {
-  T.post('statuses/update', { status: 'Greetings to #' + country + ' from the International Space Station!' }, function(err, data, response) {
+  T.post('statuses/update', { status: 'TEST TWEET: Greetings to #' + country + ' from the International Space Station!' }, function(err, data, response) {
     console.log(data)
   });
 }
