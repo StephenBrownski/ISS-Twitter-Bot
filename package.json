@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/StephenBrownski/ISS-Twitter-Bot#readme",
   "dependencies": {
+    "dotenv": "^1.2.0",
     "twit": "^2.1.1"
   }
 }
