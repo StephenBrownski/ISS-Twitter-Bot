@@ -50,13 +50,14 @@ function checkLastCountry(country) {
     'statuses/user_timeline',
     {
       user_id: '4488159391',
-      count: 1
+      count: 3
     },
     function(err, data, response) {
       var lastTag;
 
       for (var tweet in data) {
-        lastTag = tweet['entities']['hashtags'][0]['text'];
+        console.log(data[tweet]);
+        lastTag = data[tweet]['entities']['hashtags'][0]['text'];
       }
 
       if (country != lastTag) {
