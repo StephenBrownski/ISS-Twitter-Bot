@@ -32,9 +32,9 @@ function getData(data) {
     if (!err) {
       var country = res[0]['country'];
       var countryCode = res[0]['countryCode'];
+      country = country.replace(/ /g,'');
+      checkLastCountry(country);
     }
-    country = country.replace(/ /g,'');
-    checkLastCountry(country);
 
   });
 
@@ -51,7 +51,7 @@ function checkLastCountry(country) {
       data.reverse();
       var lastTag;
 
-      for (var tweet of data) {
+      for (var tweet in data) {
         lastTag = tweet['entities']['hashtags'][0]['text'];
       }
 
