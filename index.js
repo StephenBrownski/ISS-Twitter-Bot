@@ -54,11 +54,14 @@ function checkLastCountry(country) {
     },
     function(err, data, response) {
       var lastTag;
+      data.reverse();
 
       for (var tweet in data) {
-        console.log(data[tweet]);
         lastTag = data[tweet]['entities']['hashtags'][0]['text'];
       }
+
+      console.log(country);
+      console.log(lastTag);
 
       if (country != lastTag) {
         postTweet(country);
