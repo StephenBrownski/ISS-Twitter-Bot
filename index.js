@@ -45,10 +45,9 @@ function checkLastCountry(country) {
     'statuses/user_timeline',
     {
       user_id: '4488159391',
-      count: 3
+      count: 1
     },
     function(err, data, response) {
-      data.reverse();
       var lastTag;
 
       for (var tweet in data) {
