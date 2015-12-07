@@ -1,3 +1,3 @@
-The OpenShift `nodejs` cartridge documentation can be found at:
+This is the source code for a wee little Twitter Bot that sends out greetings far and wide to each country that the International Space Station visits. (And by visits, I mean flies precisely directly overtop. The geocoding is very, very precise)
 
-http://openshift.github.io/documentation/oo_cartridge_guide.html#nodejs
+The bot can be found at [https://twitter.com/IssGreetings](https://twitter.com/IssGreetings)
