@@ -16,7 +16,8 @@ var T = new Twit({
 });
 
 getIssPos();
-setInterval(getIssPos, 1000*60);
+// Try and post every 30 seconds
+setInterval(getIssPos, 1000*30);
 
 function getIssPos() {
   request("https://api.wheretheiss.at/v1/satellites/25544", function(error, response, body){
