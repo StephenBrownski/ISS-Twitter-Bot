@@ -15,11 +15,16 @@ var T = new Twit({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
 });
 
-request("https://api.wheretheiss.at/v1/satellites/25544", function(error, response, body){
-  if (!error && response.statusCode == 200) {
-    getData(body);
-  }
-});
+getIssPos();
+setInterval(getIssPos, 1000*60);
+
+function getIssPos() {
+  request("https://api.wheretheiss.at/v1/satellites/25544", function(error, response, body){
+    if (!error && response.statusCode == 200) {
+      getData(body);
+    }
+  });
+}
 
 function getData(data) {
   var satData = JSON.parse(data);
